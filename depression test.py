@@ -1,10 +1,19 @@
 # Importing the required libraries
 import time
-
+import sys
 # Displaying the instructions
-print("Please answer the following questions with a number from 0 to 3, where")
-print("0 = not at all, 1 = several days, 2 = more than half the days, and 3 = nearly every day.\n")
+print("Please answer the following questions with a number from 0 to 3, depending on how often it occurs to you")
+print("0 = never, 1 = several days, 2 = half the time, and 3 = almost every day.\n")
 
+# Checking for invalid inputs
+def check():
+    if answer<0:
+        print('invalid answers, please choose a number between 0 to 3')
+        sys.exit()
+    if answer>3:
+        print('invalid answers, please choose a number between 0 to 3')
+        sys.exit()
+        
 # Declaring the questions
 questions = ["Little interest or pleasure in doing things?", 
              "Feeling down, depressed, or hopeless?", 
@@ -34,3 +43,6 @@ elif score < 15:
     print("You have moderate symptoms of depression.")
 else:
     print("You have severe symptoms of depression.")
+    
+    
+    
